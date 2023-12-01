@@ -1,0 +1,9 @@
+node_modules
+3.5 Secrets Project
+
+# this is a comment.
+
+# all the text files will be ignored.
+*.txt
+
+

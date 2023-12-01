@@ -1,21 +1,15 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 
 const app = express();
 const port = 3000;
 
-// Custom middleware function
-const logger = (req, res, next) => {
-    console.log("Request method:", req.method)
-    console.log("Request url:", req.url)
-    next();
-};
+app.use(bodyParser.urlencoded({ extended: true}));
 
-app.use(logger);
-
-app.get('/', (req, res) => {
-    res.send("Hello here!")
+app.post('/submit', (req,res)=>{
+    console.log(req.body)
 })
 
-app.listen(port, () => {
+app.listen(port, ()=>{
     console.log("App listening on port http://localhost:3000")
 })
